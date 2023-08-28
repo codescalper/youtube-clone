@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google'
 import VideoCard from '@/components/VideoCard'
 import AppBar from '@/components/AppBar'
-import Sidebar from '@/components/Sidebar' // Import the Sidebar component
+import Sidebar from '@/components/Sidebar'
 import data from '@/components/data'
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,7 +23,6 @@ export default function Home() {
                 uploadOn={el.uploadOn}
                 channel={el.channel}
               >
-
               </VideoCard>)
             }
           </div>
