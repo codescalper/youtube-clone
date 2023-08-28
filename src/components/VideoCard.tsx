@@ -1,13 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-function VideoCard() {
+function VideoCard(props: any) {
     return (
-        <div className='rounded-xl'>
-            <img src="https://picsum.photos/id/237/300/160" />
-            <div>Hello World  </div>
-            <div>24K views<span><b>.</b>   </span></div>
+        <div className='p-5'>
+            <img className='rounded-xl mt-3' src={props.thumbnail} alt="Thumbnail" />
+            <div className='flex items-center'>
+                <img className='rounded-xl mr-3' src={props.channelImg} alt="Channel Img" />
+                <div className='font-bold'>{props.title}</div>
+            </div>
+            <div className='text-gray-400 mt-2 ml-9'>{props.channel}</div>
+            <div className='text-gray-400 ml-9'>{props.views}<span> • </span>{props.uploadOn}</div>
         </div>
-    )
+    );
 }
 
-export default VideoCard
+export default VideoCard;
