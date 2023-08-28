@@ -2,7 +2,7 @@ import React from 'react';
 
 function VideoCard(props: any) {
     return (
-        <div className='p-5'>
+        <div className='p-5 '>
             <img className='rounded-xl mt-3' src={props.thumbnail} alt="Thumbnail" />
             <div className='flex items-center'>
                 <img className='rounded-xl mr-3' src={props.channelImg} alt="Channel Img" />
