@@ -1,7 +1,12 @@
 import React from 'react'
 import SearchBar from './SearchBar'
 
-function AppBar() {
+interface Props {
+    searchQuery: string;
+    onSearch: (query: string) => void;
+}
+
+function AppBar({ searchQuery, onSearch }: Props) {
     return (
         <div className='flex justify-between p-5'>
             <div className='flex items-center ' >
@@ -16,7 +21,9 @@ function AppBar() {
                 </svg>
                 <p className='pl-5 font-bold cursor-pointer'>Youtube </p>
             </div>
-            <div><SearchBar /></div>
+            <div>
+                <SearchBar searchQuery={searchQuery} onSearch={onSearch} />
+            </div>
             <div className='font-medium cursor-pointer'>Sign in </div>
 
         </div>

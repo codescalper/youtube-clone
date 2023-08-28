@@ -1,6 +1,15 @@
 import React from 'react'
 
-function SearchBar() {
+interface Props {
+    searchQuery: string;
+    onSearch: (query: string) => void;
+}
+
+
+function SearchBar({ searchQuery, onSearch }: Props) {
+    const handleSearchChange = (event: { target: { value: any; }; }) => {
+        onSearch(event.target.value);
+    };
     return (
 
         <>
@@ -12,7 +21,7 @@ function SearchBar() {
                     id="default-search"
                     className="block w-96 p-4 pl-10 text-white text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:border-slate-500 dark:bg-stone-950 dark:border-stone-700 "
                     placeholder="Search"
-
+                    onChange={handleSearchChange}
                 />
                 <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                     <svg
